@@ -242,12 +242,7 @@ function totals(list){
   const d=list.reduce((s,a)=>{
     if(a.include_in_daily===false||a.retired||a.sold) return s;
     const n=dur(a); if(!n) return s;
-    let den=n;
-    if(a.target_daily_mode==='by_date'&&a.target_end_date){
-      const tot=Math.max(1,Math.round((new Date(a.target_end_date+'T00:00:00')-new Date(a.purchase_date+'T00:00:00'))/86400000));
-      den=tot;
-    }
-    return s+(a.price??0)/den;
+    return s+(a.price??0)/n;
   },0);
   return {total:t,daily:d};
 }
