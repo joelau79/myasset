@@ -3,88 +3,125 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>我的資產</title>
+<title>有數</title>
 <style>
 :root{
-  --bg:#f6f7f4; --card:#fff; --ink:#1b1d1a; --muted:#8a8f86;
-  --lime:#b6e34a; --lime-d:#8cc02a; --orange:#f0a04b; --grey:#c9ccc6;
-  --line:#e8eae4; --blue:#5b8def; --purple:#a978e8;
-  --safe-b: env(safe-area-inset-bottom,0px);
+  --bg:#f2f2f7; --card:#fff; --ink:#111; --muted:#8a8a8e; --muted2:#c7c7cc;
+  --green:#34c759; --lime:#b6e34a; --orange:#ff9f0a; --grey:#c7c7cc; --blue:#0a84ff;
+  --line:#e5e5ea; --safe-b:env(safe-area-inset-bottom,0px);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;font:15px/1.5 -apple-system,"PingFang HK","Noto Sans TC",sans-serif;background:var(--bg);color:var(--ink);padding-bottom:calc(78px + var(--safe-b))}
-header{position:sticky;top:0;z-index:20;background:rgba(246,247,244,.92);backdrop-filter:blur(12px);padding:14px 18px 8px;display:flex;align-items:center;gap:10px}
-h1{font-size:20px;margin:0;flex:1}
-.ico{width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:15px;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.07)}
-main{padding:4px 14px}
-.tabs{display:flex;gap:8px;overflow-x:auto;padding:6px 0 12px;scrollbar-width:none}
+body{margin:0;font:15px/1.45 -apple-system,"PingFang HK","Noto Sans TC",sans-serif;background:var(--bg);color:var(--ink);padding-bottom:calc(84px + var(--safe-b))}
+header{position:sticky;top:0;z-index:20;background:rgba(242,242,247,.92);backdrop-filter:blur(12px);padding:14px 18px 10px;display:flex;align-items:center;gap:10px}
+h1{font-size:22px;margin:0;flex:1;letter-spacing:-.3px;font-weight:700}
+.ico{width:32px;height:32px;border-radius:50%;background:transparent;display:grid;place-items:center;font-size:16px;cursor:pointer;color:#111}
+.ico:active{background:#e0e0e6}
+main{padding:2px 16px}
+h2{font-size:13px;color:var(--muted);font-weight:500;margin:20px 4px 8px;letter-spacing:.2px}
+h2 .cnt{color:var(--muted2);font-weight:400}
+.gcard{background:var(--card);border-radius:14px;padding:16px 16px 14px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.gtop{display:flex;align-items:flex-start;gap:12px}
+.gbig{flex:1;min-width:0}
+.gbig .lb{font-size:12.5px;color:var(--muted)}
+.gbig .v{font-size:27px;font-weight:700;letter-spacing:-.6px;margin:1px 0 10px}
+.gbig .v2{font-size:22px;font-weight:700;letter-spacing:-.4px;margin:1px 0 0}
+.gbig .lb2{font-size:12.5px;color:var(--muted);margin-bottom:1px}
+.gicon{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:24px;flex:0 0 auto;background:#eaf9e4}
+.statrow{display:flex;align-items:center;gap:10px;padding:7px 0}
+.statrow .nm{font-size:13.5px;width:60px;flex:0 0 auto}
+.statrow .bar{flex:1;height:7px;background:#ececf0;border-radius:4px;overflow:hidden}
+.statrow .bar i{display:block;height:100%;border-radius:4px;background:var(--green)}
+.statrow .cnt{font-size:13px;color:var(--muted);width:22px;text-align:right;flex:0 0 auto}
+.tabs{display:flex;gap:8px;align-items:center;overflow-x:auto;padding:12px 0 12px;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
-.tab{padding:7px 15px;border-radius:999px;background:#fff;font-size:13.5px;color:var(--muted);white-space:nowrap;cursor:pointer;flex:0 0 auto}
-.tab.on{background:var(--ink);color:#fff;font-weight:600}
-.hero{background:linear-gradient(135deg,var(--lime) 0%,#d6f07a 100%);border-radius:20px;padding:18px 20px;margin-bottom:12px;box-shadow:0 4px 14px rgba(150,190,60,.22)}
-.hero .lb{font-size:12.5px;opacity:.75;letter-spacing:.5px}
-.hero .v{font-size:30px;font-weight:700;letter-spacing:-.5px;margin:2px 0 10px}
-.hero .row{display:flex;gap:22px;flex-wrap:wrap}
-.hero .row div{font-size:12.5px;opacity:.8}
-.hero .row b{display:block;font-size:16px;opacity:1;font-weight:600}
-.card{background:var(--card);border-radius:16px;padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
-.item{display:flex;gap:12px;align-items:flex-start}
-.emo{width:44px;height:44px;border-radius:13px;background:#f0f2ec;display:grid;place-items:center;font-size:21px;flex:0 0 auto}
-.item .nm{font-weight:600;font-size:15.5px}
-.item .sub{font-size:12.5px;color:var(--muted);margin-top:2px}
-.item .rt{margin-left:auto;text-align:right;flex:0 0 auto}
-.item .rt .d{font-weight:600;font-size:15px}
-.item .rt .s{font-size:12px;color:var(--muted)}
-.pbar{height:5px;background:#eef0ea;border-radius:3px;margin-top:8px;overflow:hidden}
-.pbar i{display:block;height:100%;background:var(--lime-d);border-radius:3px}
-.chip{display:inline-block;padding:2px 8px;border-radius:8px;background:#f0f2ec;font-size:11px;color:var(--muted);margin-right:4px}
-.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
-section h2{font-size:14px;color:var(--muted);font-weight:600;margin:20px 4px 10px;letter-spacing:.3px}
-canvas{width:100%;display:block;border-radius:12px;background:#fff}
-.setrow{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}
-.setrow:last-child{border:0}
-.setrow .l{flex:1;font-size:14.5px}
-.setrow .r{font-size:13.5px;color:var(--muted)}
-.sw{width:46px;height:28px;border-radius:16px;background:#dcdfd7;position:relative;cursor:pointer;transition:.2s}
-.sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
-.sw.on{background:var(--lime-d)}
-.sw.on::after{left:21px}
-nav{position:fixed;bottom:0;left:0;right:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:flex;padding:8px 0 calc(8px + var(--safe-b));justify-content:space-around}
-nav button{flex:1;background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:var(--muted);cursor:pointer;padding:4px 0}
-nav button.on{color:var(--ink);font-weight:600}
-nav button .ic{width:26px;height:26px;border-radius:9px;display:grid;place-items:center;font-size:15px}
-nav button.on .ic{background:var(--lime)}
-.fab{position:fixed;right:18px;bottom:calc(84px + var(--safe-b));width:54px;height:54px;border-radius:50%;background:var(--lime);box-shadow:0 6px 18px rgba(140,192,42,.45);display:grid;place-items:center;font-size:28px;color:#fff;z-index:25;cursor:pointer;border:0}
+.tab{padding:7px 15px;border-radius:999px;background:#fff;font-size:13.5px;color:var(--muted);white-space:nowrap;cursor:pointer;flex:0 0 auto;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.tab.on{background:var(--ink);color:#fff;font-weight:600;box-shadow:none}
+.rowtools{margin-left:auto;display:flex;gap:4px;flex:0 0 auto;padding-left:8px}
+.rowtools .ico{width:28px;height:28px;font-size:13px}
+.acard{background:var(--card);border-radius:14px;padding:13px 14px;margin-bottom:9px;box-shadow:0 1px 2px rgba(0,0,0,.04);display:flex;gap:12px;align-items:flex-start;cursor:pointer}
+.aico{width:44px;height:44px;border-radius:12px;background:#f2f2f7;display:grid;place-items:center;font-size:22px;flex:0 0 auto;position:relative}
+.aico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:14px;height:14px;border-radius:50%;background:var(--green);border:2px solid #fff}
+.abody{flex:1;min-width:0}
+.astat{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
+.astat .dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block}
+.aname{font-size:15.5px;font-weight:600;margin:1px 0 2px;letter-spacing:-.2px}
+.acost{font-size:13px;color:var(--muted)}
+.aright{margin-left:auto;text-align:right;flex:0 0 auto;padding-top:2px}
+.aright .d{font-size:14.5px;font-weight:600;letter-spacing:-.2px}
+.pbar{height:5px;background:#ececf0;border-radius:3px;margin-top:8px;position:relative}
+.pbar i{display:block;height:100%;border-radius:3px;background:var(--green)}
+.pbar .mark{position:absolute;top:-3px;width:2px;height:11px;background:#111;border-radius:1px}
+.left{font-size:11.5px;color:var(--muted);margin-top:5px}
+.empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.empty .e{font-size:46px;margin-bottom:12px}
+.empty .m{font-size:15px;color:#8e8e93}
+.empty .h{font-size:12.5px;color:var(--muted);margin-top:6px}
+.setrow{display:flex;align-items:center;gap:11px;padding:11px 14px;background:#fff;border-bottom:1px solid var(--line);min-height:46px}
+.setrow:last-child{border-bottom:0}
+.setrow .si{width:27px;height:27px;border-radius:7px;display:grid;place-items:center;font-size:13px;color:#fff;flex:0 0 auto}
+.setrow .l{flex:1;font-size:14.5px;min-width:0}
+.setrow .r{font-size:14px;color:var(--muted);white-space:nowrap}
+.setrow .r.chev{color:var(--muted2);font-size:15px;margin-left:2px}
+.sgroup{background:#fff;border-radius:14px;overflow:hidden;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.sw{width:44px;height:26px;border-radius:14px;background:#e3e3e8;position:relative;cursor:pointer;transition:.2s;flex:0 0 auto}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.sw.on{background:var(--green)}
+.sw.on::after{left:20px}
+.pill{display:inline-flex;background:#e9e9ee;border-radius:9px;padding:2px;gap:2px}
+.pill button{border:0;background:none;padding:6px 12px;border-radius:7px;font-size:13px;color:var(--muted);cursor:pointer;font-family:inherit}
+.pill button.on{background:#fff;color:var(--ink);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.banner{background:linear-gradient(135deg,#b6e34a,#d8f27e);border-radius:16px;padding:15px 16px;margin-bottom:14px;position:relative;overflow:hidden}
+.banner::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.05) 1px,transparent 1px);background-size:14px 14px}
+.banner .bt{font-size:16px;font-weight:700;position:relative}
+.banner .bs{font-size:12.5px;margin-top:3px;position:relative;opacity:.85}
+.banner .bb{margin-top:10px;display:inline-block;background:#111;color:#fff;font-size:13px;font-weight:600;padding:7px 15px;border-radius:999px;position:relative;cursor:pointer}
+.chartwrap{position:relative;padding:6px 2px 0}
+canvas{width:100%;display:block}
+.axis{position:absolute;right:0;top:4px;bottom:20px;display:flex;flex-direction:column;justify-content:space-between;font-size:9.5px;color:var(--muted2);pointer-events:none}
+.xaxis{display:flex;justify-content:space-between;font-size:9.5px;color:var(--muted2);margin-top:4px;padding-left:2px}
+nav{position:fixed;bottom:0;left:0;right:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:flex;align-items:center;padding:7px 8px calc(7px + var(--safe-b))}
+nav button{flex:1;background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10.5px;color:#111;cursor:pointer;font-family:inherit;padding:2px 0}
+nav button .ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:16px;color:#111}
+nav button.on .ic{background:#dff5c8}
+nav button.on{font-weight:600}
+.fab{position:fixed;right:16px;bottom:calc(78px + var(--safe-b));width:52px;height:52px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.22);display:grid;place-items:center;font-size:26px;color:#111;z-index:25;cursor:pointer;border:0;font-weight:300}
 .sheet{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:40;display:none;align-items:flex-end}
 .sheet.open{display:flex}
-.sheet .panel{background:var(--bg);width:100%;border-radius:24px 24px 0 0;max-height:92vh;overflow:auto;padding:16px 18px 30px}
-.sheet h3{margin:0 0 14px;font-size:17px}
-label{display:block;font-size:12.5px;color:var(--muted);margin:12px 0 5px}
-input,select,textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:12px;font-size:15px;background:#fff;font-family:inherit}
-.seg{display:flex;gap:6px;background:#eceee8;padding:3px;border-radius:12px;margin-top:5px}
-.seg button{flex:1;padding:8px;border:0;background:none;border-radius:9px;font-size:13.5px;color:var(--muted);cursor:pointer;font-family:inherit}
-.seg button.on{background:#fff;color:var(--ink);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.08)}
-.save{margin-top:20px;width:100%;padding:14px;border:0;border-radius:14px;background:var(--ink);color:#fff;font-size:16px;font-weight:600;cursor:pointer}
-.empty{text-align:center;padding:50px 20px;color:var(--muted)}
-.empty .e{font-size:44px;margin-bottom:10px;opacity:.5}
-.st{display:flex;align-items:center;gap:9px;padding:9px 0;font-size:13.5px}
-.st .bar{flex:1;height:8px;background:#f0f2ec;border-radius:4px;overflow:hidden}
-.st .bar i{display:block;height:100%;border-radius:4px}
+.sheet .panel{background:var(--bg);width:100%;border-radius:14px 14px 0 0;max-height:94vh;overflow:auto;padding-bottom:calc(24px + var(--safe-b))}
+.sheet .shead{display:flex;align-items:center;gap:12px;padding:14px 16px 10px;background:var(--bg);position:sticky;top:0;z-index:2}
+.shead .t{flex:1;text-align:center;font-size:17px;font-weight:600}
+.shead .x,.shead .ok{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:14px;background:#e3e3e8;cursor:pointer;border:0;color:#111}
+.shead .ok{background:#111;color:#fff}
+label{display:block;font-size:12.5px;color:var(--muted);margin:0 0 5px}
+input,select,textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:10px;font-size:15px;background:#fff;font-family:inherit}
+textarea{resize:vertical}
+.frow{display:flex;align-items:center;gap:12px;padding:12px 14px;background:#fff;border-bottom:1px solid var(--line)}
+.frow:last-child{border-bottom:0}
+.frow .fi{width:26px;text-align:center;font-size:15px;flex:0 0 auto}
+.frow .fl{flex:1;font-size:14.5px}
+.frow .fv{color:var(--muted);font-size:14px;display:flex;align-items:center;gap:4px}
+.frow input,.frow select{border:0;padding:0;text-align:right;font-size:15px;background:none}
+.save{margin:16px 16px 0;width:calc(100% - 32px);padding:14px;border:0;border-radius:12px;background:var(--ink);color:#fff;font-size:16px;font-weight:600;cursor:pointer}
+.delbtn{margin:10px 16px 0;width:calc(100% - 32px);padding:13px;border:0;border-radius:12px;background:#fff;color:#ff3b30;font-size:15px;font-weight:600;cursor:pointer}
 </style>
 </head>
 <body>
 <header>
   <h1 id="ttl">有數</h1>
   <div class="ico" onclick="focusSearch()">🔍</div>
-  <div class="ico" onclick="go('wishes')">💚</div>
+  <div class="ico" onclick="go('wishes')">♡</div>
 </header>
 <main id="app"></main>
 <nav id="nav"></nav>
-<button class="fab" onclick="openSheet()">+</button>
+<button class="fab" onclick="openSheet()">＋</button>
 
 <div class="sheet" id="sheet" onclick="if(event.target===this)closeSheet()">
   <div class="panel">
-    <h3 id="sheetT">新增資產</h3>
+    <div class="shead">
+      <button class="x" onclick="closeSheet()">✕</button>
+      <div class="t" id="sheetT">新增資產</div>
+      <button class="ok" onclick="saveAsset()">✓</button>
+    </div>
     <div id="sheetB"></div>
   </div>
 </div>
@@ -230,31 +267,35 @@ const DATA = (typeof window.MYASSET !== "undefined") ? window.MYASSET : {
 "history": []
 };
 let S = JSON.parse(JSON.stringify(DATA));
-let tab = 'home', filter = 'all', editing = null, sheetMode = 'asset', range = 'all', query = '';
+let tab = 'home', filter = 'all', editing = null, range = 'all', query = '', statMode = 'amount';
 
 const $=s=>document.querySelector(s);
-const fmt=n=>{const d=S.meta.decimals??2;return Number(n||0).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});};
+const dec=S.meta.decimals??2;
+const fmt=n=>{let v=Number(n||0);let s=v.toFixed(dec);if(S.meta.thousands_separator){const p=s.split('.');p[0]=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,',');s=p.join('.');}return s;};
 const cur=v=>S.meta.currency_symbol+v;
-const today=()=>new Date();
 const days=(iso)=>{if(!iso)return 0;const p=String(iso).split('-').map(Number);const u=Date.UTC(p[0],(p[1]||1)-1,p[2]||1);const t=new Date();const now=Date.UTC(t.getFullYear(),t.getMonth(),t.getDate());return Math.max(0,Math.round((now-u)/86400000));};
 const dur=a=>days(a&&a.purchase_date);
+// 原 App 用「向下取整」顯示每項日均成本
+const dailyOf=a=>{const n=dur(a);if(!n)return 0;return Math.floor((a.price??0)/n*100)/100;};
 
 function totals(list){
   const t=list.reduce((s,a)=>s+(a.include_in_total!==false && !a.retired && !a.sold ? (a.market_value??a.price):0),0);
-  const d=list.reduce((s,a)=>{
+  // 總日均 = 精確值相加後四捨五入（每項顯示則向下取整，同原 App 一致）
+  const exact=list.reduce((s,a)=>{
     if(a.include_in_daily===false||a.retired||a.sold) return s;
     const n=dur(a); if(!n) return s;
     return s+(a.price??0)/n;
   },0);
+  const d=Math.round(exact*100)/100;
   return {total:t,daily:d};
 }
 
 function navRender(){
-  const items=[['home','🏠','有數'],['wishes','💚','心願'],['trends','📈','趨勢'],['settings','⚙️','設置']];
+  const items=[['home','🏠','有數'],['wishes','🫙','心願'],['trends','📈','趨勢'],['settings','⚙️','設置']];
   $('#nav').innerHTML=items.map(([k,ic,lb])=>`<button class="${tab===k?'on':''}" onclick="go('${k}')"><span class="ic">${ic}</span>${lb}</button>`).join('');
 }
-
 function go(t){tab=t;render();window.scrollTo(0,0);}
+function focusSearch(){const q=prompt('搜尋資產');if(q!==null){query=q.trim();render();}}
 
 function render(){
   navRender();
@@ -267,130 +308,237 @@ function render(){
 }
 
 function homeHTML(){
-  const all=S.assets;
-  const t=totals(all);
-  const inUse=all.filter(x=>!x.retired&&!x.sold).length;
-  const ret=all.filter(x=>x.retired).length;
-  const sold=all.filter(x=>x.sold).length;
+  const all=S.assets, t=totals(all);
+  const use=all.filter(x=>!x.retired&&!x.sold), ret=all.filter(x=>x.retired), sold=all.filter(x=>x.sold);
   const fl=[['全部','all'],['使用中','use'],['已退役','ret'],['已賣出','sold']];
   let list=all.filter(x=>filter==='all'||(filter==='use'&&!x.retired&&!x.sold)||(filter==='ret'&&x.retired)||(filter==='sold'&&x.sold));
   list=list.slice().sort((a,b)=>(b.pinned?1:0)-(a.pinned?1:0));
   if(query)list=list.filter(a=>a.name.toLowerCase().includes(query.toLowerCase()));
+  const bar=(n,color)=>{const p=all.length?(n/all.length*100):0;return `<div class="statrow"><span class="nm">${color==='var(--green)'?'使用中':color==='var(--orange)'?'已退役':'已賣出'}</span><span class="bar"><i style="width:${p}%;background:${color}"></i></span><span class="cnt">${n}</span></div>`;};
   return `
-  <div class="hero">
-    <div class="lb">總資產</div>
-    <div class="v">${cur(fmt(t.total))}</div>
-    <div class="row">
-      <div>日均成本<b>${cur(fmt(t.daily))}</b></div>
-      <div>使用中<b>${inUse}</b></div>
-      <div>已退役<b>${ret}</b></div>
-      <div>已賣出<b>${sold}</b></div>
+  <h2>資產總覽 <span class="cnt">${all.length}/${all.length}</span></h2>
+  <div class="gcard">
+    <div class="gtop">
+      <div class="gbig">
+        <div class="lb">總資產</div>
+        <div class="v">${cur(fmt(t.total))}</div>
+        <div class="lb2">日均成本</div>
+        <div class="v2">${cur(fmt(t.daily))}</div>
+      </div>
+      <div class="gicon">💰</div>
+    </div>
+    <div style="margin-top:12px">
+      ${bar(use.length,'var(--green)')}
+      ${bar(ret.length,'var(--orange)')}
+      ${bar(sold.length,'var(--grey)')}
     </div>
   </div>
-  <div class="tabs">${fl.map(([l,k])=>`<div class="tab ${filter===k?'on':''}" onclick="filter='${k}';render()">${l}</div>`).join('')}<div class="ico" style="margin-left:auto;flex:0 0 auto">⇅</div><div class="ico" style="flex:0 0 auto">⚙</div></div>
-  ${query?`<div class="card" style="padding:10px 14px;display:flex;align-items:center;gap:8px"><span>🔍</span><span style="flex:1;font-size:14px">${query}</span><span style="color:var(--muted);cursor:pointer" onclick="query='';render()">✕</span></div>`:''}
-  ${list.length?list.map(itemHTML).join(''):'<div class="empty"><div class="e">📦</div>目前空空如也<br>點擊 ＋ 新增資產</div>'}`;
+  <div class="tabs">${fl.map(([l,k])=>`<div class="tab ${filter===k?'on':''}" onclick="filter='${k}';render()">${l}</div>`).join('')}
+    <div class="rowtools"><div class="ico" onclick="sortBy('price')">1↓</div><div class="ico" onclick="toggleFilterSheet()">⧩</div><div class="ico" onclick="toggleSelectMode()">☑</div></div>
+  </div>
+  ${query?`<div class="gcard" style="padding:10px 14px;display:flex;align-items:center;gap:8px"><span>🔍</span><span style="flex:1;font-size:14px">${query}</span><span style="color:var(--muted);cursor:pointer" onclick="query='';render()">✕</span></div>`:''}
+  ${list.length?list.map(itemHTML).join(''):'<div class="empty"><div class="e">📦</div><div class="m">目前空空如也</div><div class="h">點擊 ＋ 新增資產</div></div>'}`;
 }
+
+let sortMode='default';
+function sortBy(m){sortMode=(sortMode===m?'default':m);render();}
+function toggleFilterSheet(){alert('篩選：全部 / 使用中 / 已退役 / 已賣出');}
+function toggleSelectMode(){alert('多選模式');}
 
 function itemHTML(a){
   const n=dur(a);
-  const t=totals([a]);
-  let bar='',extra='';
+  const dv=dailyOf(a);
+  let bar='',left='';
   if(a.target_daily_mode==='by_date'&&a.target_end_date){
-    const total=Math.max(1,Math.round((new Date(a.target_end_date+'T00:00:00')-new Date(a.purchase_date+'T00:00:00'))/86400000));
-    const left=Math.max(0,total-n);
-    bar=`<div class="pbar"><i style="width:${Math.min(100,n/total*100)}%"></i></div>`;
-    extra=`<div class="sub">還剩 ${left} 天</div>`;
+    const s=String(a.purchase_date).split('-').map(Number);
+    const e=String(a.target_end_date).split('-').map(Number);
+    const total=Math.max(1,Math.round((Date.UTC(e[0],e[1]-1,e[2])-Date.UTC(s[0],s[1]-1,s[2]))/86400000));
+    const remain=Math.max(0,total-n);
+    const pct=Math.min(100,n/total*100);
+    bar=`<div class="pbar"><i style="width:${pct}%"></i>${remain>0?`<span class="mark" style="left:${pct}%"></span>`:''}</div>`;
+    left=`<div class="left">還剩 ${remain} 天</div>`;
   }
   const st=a.retired?'已退役':(a.sold?'已賣出':'使用中');
-  const sc=a.retired?'var(--orange)':(a.sold?'var(--grey)':'var(--lime-d)');
-  return `<div class="card" onclick="openSheet('${a.id}')">
-    <div class="item">
-      <div class="emo">${a.icon||'📦'}</div>
-      <div style="flex:1;min-width:0">
-        <div class="nm">${a.name}${a.pinned?' 📌':''}</div>
-        <div class="sub"><span class="dot" style="background:${sc}"></span>${st} · ${cur(fmt(a.price))} · ${n} ${S.meta.duration_unit||'天'}</div>
-        ${a.category&&a.category!=='未分類'?`<span class="chip">${a.category}</span>`:''}
-        ${(a.tags||[]).map(x=>`<span class="chip">#${x}</span>`).join('')}
-        ${extra}
-        ${bar}
-      </div>
-      <div class="rt"><div class="d">${cur(fmt(t.daily))}/天</div></div>
-    </div></div>`;
+  const sc=a.retired?'var(--orange)':(a.sold?'var(--grey)':'var(--green)');
+  return `<div class="acard" onclick="openSheet('${a.id}')">
+    <div class="aico">${a.icon||'📦'}</div>
+    <div class="abody">
+      <div class="astat"><span class="dot" style="background:${sc}"></span>${st}</div>
+      <div class="aname">${a.name}</div>
+      <div class="acost">${cur(fmt(a.price))} | ${n} ${S.meta.duration_unit||'天'}</div>
+      ${bar}${left}
+    </div>
+    <div class="aright"><div class="d">${cur(fmt(dv))}/${S.meta.duration_unit||'天'}</div></div>
+  </div>`;
 }
 
 function wishesHTML(){
   const w=S.wishes||[];
   const t=w.reduce((s,x)=>s+(x.price||0),0);
-  return `<div class="hero"><div class="lb">心願總值</div><div class="v">${cur(fmt(t))}</div><div class="row"><div>心願數量<b>${w.length}</b></div></div></div>
-  ${w.length?w.map(x=>`<div class="card"><div class="item"><div class="emo">${x.icon||'💚'}</div><div style="flex:1"><div class="nm">${x.name}</div><div class="sub">${cur(fmt(x.price))}</div></div></div></div>`).join('')
-  :'<div class="empty"><div class="e">🫙</div>目前空空如也<br>點擊 ＋ 新增心願</div>'}`;
+  return `<h2>心願</h2>
+  <div class="gcard">
+    <div class="gtop">
+      <div class="gbig">
+        <div class="lb">心願總值</div>
+        <div class="v">${cur(fmt(t))}</div>
+        <div class="lb" style="margin-top:6px">心願數量 : ${w.length}</div>
+      </div>
+      <div class="gicon">🫙</div>
+    </div>
+  </div>
+  ${w.length?w.map(x=>`<div class="acard"><div class="aico">${x.icon||'🫙'}</div><div class="abody"><div class="aname">${x.name}</div><div class="acost">${cur(fmt(x.price))}</div></div><div class="aright"><div class="d">${cur(fmt(x.price))}</div></div></div>`).join('')
+  :'<div class="empty"><div class="e">🫙</div><div class="m">目前空空如也</div><div class="h">點擊 ＋ 新增資產</div></div>'}`;
 }
 
 function trendsHTML(){
   const t=totals(S.assets);
+  const all=S.assets;
+  const use=all.filter(x=>!x.retired&&!x.sold), ret=all.filter(x=>x.retired), sold=all.filter(x=>x.sold);
   const rg=[['全部','all'],['本月','m'],['近 7 天','7'],['近 30 天','30'],['近 90 天','90'],['近 180 天','180']];
-  return `<section><h2 style="display:flex;align-items:center">趨勢 洞悉 <span style="margin-left:auto">⟳</span></h2>
-  <div class="tabs">${rg.map(([l,k])=>`<div class="tab ${range===k?'on':''}" onclick="range='${k}';render()">${l}</div>`).join('')}</div></section>
-  <section><h2>資產總值</h2>
-  <div class="card"><div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted)"><span>總價值</span><span>數量</span></div>
-  <div style="display:flex;justify-content:space-between;font-size:22px;font-weight:700;margin:4px 0 10px"><span>${cur(fmt(t.total))}</span><span>${S.assets.length}</span></div>
-  <canvas id="c1" height="150"></canvas></div></section>
-  <section><h2>資產狀態</h2><div class="card">
-    <div class="tabs" style="padding:0 0 10px"><div class="tab on">金額</div><div class="tab">數量</div></div>
-    <div id="statusBox"></div></div></section>
-  <section><h2>新增資產</h2><div class="card"><div style="font-size:12.5px;color:var(--muted)">購入總額</div><div style="font-size:20px;font-weight:700;margin:3px 0 10px">${cur(fmt(t.total))}</div><canvas id="c2" height="120"></canvas></div></section>
-  <section><h2>日均成本</h2><div class="card"><canvas id="c3" height="120"></canvas></div></section>`;
+  const seg=statMode==='amount'
+    ? [['使用中',use,all],['已退役',ret,all],['已賣出',sold,all]]
+    : [['使用中',use,all],['已退役',ret,all],['已賣出',sold,all]];
+  return `
+  <h2 style="display:flex;align-items:center;margin-top:14px">趨勢 洞悉 <span class="ico" style="margin-left:auto">↗</span></h2>
+  <div class="tabs">${rg.map(([l,k])=>`<div class="tab ${range===k?'on':''}" onclick="range='${k}';render()">${l}</div>`).join('')}</div>
+  <h2>資產狀態</h2>
+  <div class="gcard">
+    <div style="display:flex;justify-content:flex-end;margin-bottom:6px">
+      <div class="pill"><button class="${statMode==='amount'?'on':''}" onclick="statMode='amount';render()">金額</button><button class="${statMode==='count'?'on':''}" onclick="statMode='count';render()">數量</button></div>
+    </div>
+    ${seg.map(([n,l])=>{
+      const base = statMode==='amount' ? t.total : (all.length||1);
+      const v = statMode==='amount' ? l.reduce((s,x)=>s+(x.include_in_total!==false?(x.market_value??x.price):0),0) : l.length;
+      const p=base?(v/base*100):0;
+      return `<div class="statrow" style="padding:5px 0"><span class="nm" style="width:52px"><span class="dot" style="background:${n==='使用中'?'var(--green)':n==='已退役'?'var(--orange)':'var(--grey)'};width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:4px"></span>${n}</span>
+        <span style="flex:1"></span>
+        <span style="font-size:12.5px;color:var(--muted);width:64px;text-align:right">${p.toFixed(2)}%</span>
+        <span style="font-size:12.5px;color:var(--muted);width:96px;text-align:right">${statMode==='amount'?cur(fmt(v)):v}</span></div>`;
+    }).join('')}
+    <div class="chartwrap" style="margin-top:12px">
+      <canvas id="c1" height="170"></canvas>
+      <div class="axis" id="ax1"></div>
+      <div class="xaxis" id="xl1"></div>
+    </div>
+  </div>
+  <h2>新增資產</h2>
+  <div class="gcard">
+    <div class="lb">購入總額</div>
+    <div style="font-size:22px;font-weight:700;letter-spacing:-.4px;margin:1px 0 8px">${cur(fmt(t.total))}</div>
+    <div class="chartwrap"><canvas id="c2" height="140"></canvas><div class="axis" id="ax2"></div><div class="xaxis" id="xl2"></div></div>
+  </div>
+  <h2>日均成本</h2>
+  <div class="gcard"><div class="chartwrap"><canvas id="c3" height="140"></canvas><div class="axis" id="ax3"></div><div class="xaxis" id="xl3"></div></div></div>`;
 }
 
 function settingsHTML(){
   const m=S.meta;
-  return `<section><h2>數值與單位</h2><div class="card">
-    <div class="setrow"><div class="l">貨幣單位</div><div class="r">${m.currency} ${m.currency_symbol}</div></div>
-    <div class="setrow"><div class="l">服役時長單位</div><div class="r">${m.duration_unit||'天'}</div></div>
-    <div class="setrow"><div class="l">小數點設置</div><div class="r">保留 ${m.decimals??2} 位</div></div>
-  </div></section>
-  <section><h2>顯示與外觀</h2><div class="card">
-    <div class="setrow"><div class="l">主題模式</div><div class="r">☀️ 淺色</div></div>
-    <div class="setrow"><div class="l">首頁風格</div><div class="r">預設</div></div>
-  </div></section>
-  <section><h2>數據</h2><div class="card">
-    <div class="setrow"><div class="l">數據來源</div><div class="r">GitHub myasset</div></div>
-    <div class="setrow"><div class="l">最後更新</div><div class="r">${m.updated_at||'—'}</div></div>
-    <div class="setrow"><div class="l">匯出 JSON</div><div class="r" onclick="exportJSON()" style="color:var(--blue)">下載 ›</div></div>
-  </div></section>
-  <section><h2>回饋與支援</h2><div class="card">
-    <div class="setrow"><div class="l">GitHub Repo</div><div class="r" onclick="window.open('https://github.com/joelau79/myasset')" style="color:var(--blue)">joelau79/myasset ›</div></div>
-  </div></section>`;
+  const R=(si,l,r,chev)=>`<div class="setrow"><span class="si" style="background:${si.bg||'#8e8e93'}">${si.t||''}</span><span class="l">${l}</span><span class="r">${r||''}</span>${chev?'<span class="r chev">›</span>':''}</div>`;
+  return `
+  <div style="display:flex;align-items:center;margin:6px 0 4px">
+    <h1 style="font-size:22px">設置</h1>
+    <button class="ico" style="margin-left:auto;width:auto;height:auto;padding:7px 12px;border-radius:999px;background:#e3e3e8;font-size:13px;gap:5px;display:flex;align-items:center">⟳ 恢復購買</button>
+  </div>
+  <div class="banner">
+    <div class="bt">加入 有數 PRO</div>
+    <div class="bs">解鎖全部權限，讓資產心中有數</div>
+    <span class="bb">了解權益</span>
+  </div>
+  <h2>數據與安全</h2>
+  <div class="sgroup">
+    ${R({t:'●',bg:'linear-gradient(135deg,#34c759,#ff9f0a,#ff375f)'},'分類','',true)}
+    ${R({t:'🏷',bg:'#34c759'},'標籤','',true)}
+    ${R({t:'☁',bg:'#0a84ff'},'數據雲同步','',true)}
+    ${R({t:'🖼',bg:'#bf5af2'},'圖庫','',true)}
+    ${R({t:'▤',bg:'#30d158'},'備份與恢復','',true)}
+    ${R({t:'🔒',bg:'#5e5ce6'},'密碼保護','',true)}
+    ${R({t:'✦',bg:'#ffd60a'},'進階','',true)}
+  </div>
+  <h2>數值與單位</h2>
+  <div class="sgroup">
+    ${R({t:'$',bg:'#ffd60a'},'貨幣單位',`🇲🇴 ${m.currency} ${m.currency_symbol}`,true)}
+    ${R({t:'⏱',bg:'#0a84ff'},'服役時長單位',m.duration_unit||'天',true)}
+    ${R({t:'.0',bg:'#0a84ff'},'小數點設置',`保留 ${m.decimals??2} 位`,true)}
+    <div class="setrow"><span class="si" style="background:#34c759">,0</span><span class="l">使用千分位分隔符</span><span class="sw ${m.thousands_separator?'on':''}" onclick="this.classList.toggle('on')"></span></div>
+  </div>
+  <h2>顯示與外觀</h2>
+  <div class="sgroup">
+    <div class="setrow"><span class="si" style="background:#0a84ff">👕</span><span class="l">主題模式</span>
+      <span class="pill"><button>🌙</button><button class="on" style="background:#ffd60a">☀️</button><button>◐</button></span></div>
+    ${R({t:'▦',bg:'#34c759'},'應用圖標','',true)}
+    <div class="setrow"><span class="si" style="background:#34c759">📄</span><span class="l">首頁風格</span>
+      <span class="pill"><button class="on">預設</button><button>經典</button></span></div>
+    ${R({t:'◎',bg:'#0a84ff'},'視圖模式','',true)}
+  </div>
+  <h2>通用設置</h2>
+  <div class="sgroup">
+    <div class="setrow"><span class="si" style="background:#0a84ff">📳</span><span class="l">觸感回饋</span><span class="sw" onclick="this.classList.toggle('on')"></span></div>
+    ${R({t:'🌐',bg:'#34c759'},'語言','',true)}
+  </div>
+  <h2>回饋與支援</h2>
+  <div class="sgroup">
+    ${R({t:'🐙',bg:'#111'},'GitHub Repo','joelau79/myasset',true)}
+    <div class="setrow" onclick="exportJSON()" style="cursor:pointer"><span class="si" style="background:#0a84ff">⬇︎</span><span class="l">匯出 JSON</span><span class="r chev">›</span></div>
+    <div class="setrow"><span class="si" style="background:#8e8e93">🕘</span><span class="l">最後更新</span><span class="r">${m.updated_at||'—'}</span></div>
+  </div>`;
 }
 
+/* ---------- charts ---------- */
+function series(){
+  const all=S.assets.slice().sort((a,b)=>String(a.purchase_date).localeCompare(String(b.purchase_date)));
+  const map={};
+  all.forEach(a=>{
+    const d=a.purchase_date;
+    if(!map[d])map[d]={d,v:0,daily:0,n:0};
+    map[d].v+=(a.market_value??a.price);
+    map[d].daily+=dailyOf(a);
+    map[d].n+=1;
+  });
+  let pts=Object.values(map).sort((a,b)=>a.d.localeCompare(b.d));
+  // cumulative
+  let cv=0,cd=0;
+  pts=pts.map(p=>{cv+=p.v;cd+=p.daily;return {d:p.d,v:cv,daily:cd,n:p.n};});
+  const today=new Date().toISOString().slice(0,10);
+  if(!pts.length||pts[pts.length-1].d!==today)pts.push({d:today,v:cv,daily:cd,n:0});
+  return pts;
+}
+function barChart(id,pts,key,axisId,xlId,fmtY){
+  const c=document.getElementById(id);if(!c)return;
+  const wrap=c.parentElement;
+  const w=c.width=Math.max(200,wrap.clientWidth-34), h=c.height;
+  const vals=pts.map(p=>p[key]);
+  const mx=Math.max(...vals,1);
+  const nice=n=>{const s=n>=10000?10000:n>=1000?1000:n>=100?100:10;return Math.ceil(n/s)*s;};
+  const top=nice(mx);
+  const g=c.getContext('2d');
+  g.clearRect(0,0,w,h);
+  const padB=18,padT=6;
+  const bw=Math.max(10,(w-8)/pts.length*0.55);
+  pts.forEach((p,i)=>{
+    const cx=4+i*((w-8)/pts.length)+((w-8)/pts.length)/2;
+    const bh=(p[key]/top)*(h-padB-padT);
+    g.fillStyle='#34c759';
+    const x=cx-bw/2, y=h-padB-bh;
+    if(bh>0)g.fillRect(x,y,bw,bh);
+  });
+  g.strokeStyle='#e5e5ea';g.lineWidth=1;
+  g.beginPath();g.moveTo(0,h-padB+.5);g.lineTo(w,h-padB+.5);g.stroke();
+  const ax=document.getElementById(axisId);
+  if(ax){const steps=[top,top*0.75,top*0.5,top*0.25,0];ax.innerHTML=steps.map(v=>`<span>${fmtY(v)}</span>`).join('');}
+  const xl=document.getElementById(xlId);
+  if(xl)xl.innerHTML=pts.map(p=>`<span>${p.d.slice(5).replace('-','.')==='10.22'?'今天':p.d.slice(5).replace('-','.')}</span>`).join('');
+}
+function fmtW(v){
+  if(v>=100000000)return (v/100000000).toFixed(0)+'w';
+  if(v>=10000)return (v/10000).toFixed(0)+'w';
+  if(v>=1000)return (v/1000).toFixed(0)+'k';
+  return String(Math.round(v));
+}
 function drawCharts(){
-  const h=S.history.length?S.history:[{d:new Date().toISOString().slice(0,10),v:totals(S.assets).total,daily:totals(S.assets).daily}];
-  const line=(id,vals,color)=>{
-    const c=document.getElementById(id);if(!c)return;
-    const w=c.width=c.parentElement.clientWidth,h2=c.height;
-    const mx=Math.max(...vals)*1.1||1;
-    c.getContext('2d').clearRect(0,0,w,h2);
-    c.getContext('2d').strokeStyle=color;c.getContext('2d').lineWidth=2.5;c.getContext('2d').lineJoin='round';
-    c.getContext('2d').beginPath();
-    vals.forEach((v,i)=>{const x=8+i*(w-16)/(vals.length-1||1),y=h2-18-(v/mx)*(h2-30);i?c.getContext('2d').lineTo(x,y):c.getContext('2d').moveTo(x,y);});
-    c.getContext('2d').stroke();
-    c.getContext('2d').fillStyle=color;
-    vals.forEach((v,i)=>{const x=8+i*(w-16)/(vals.length-1||1),y=h2-18-(v/mx)*(h2-30);c.getContext('2d').beginPath();c.getContext('2d').arc(x,y,3,0,7);c.getContext('2d').fill();});
-  };
-  line('c1',h.map(x=>x.v),'#8cc02a');
-  line('c2',h.map(x=>x.v),'#8cc02a');
-  line('c3',h.map(x=>x.daily),'#5b8def');
-  const all=S.assets,t=totals(all);
-  const use=all.filter(x=>!x.retired&&!x.sold),ret=all.filter(x=>x.retired),sold=all.filter(x=>x.sold);
-  const seg=[['使用中',use,t.total,'#8cc02a'],['已退役',ret,0,'#f0a04b'],['已賣出',sold,0,'#c9ccc6']];
-  document.getElementById('statusBox').innerHTML=seg.map(([n,l,v,c])=>{
-    const p=t.total?((l.reduce((s,x)=>s+(x.include_in_total!==false?(x.market_value??x.price):0),0))/t.total*100):0;
-    return `<div class="st"><span class="dot" style="background:${c}"></span><span style="width:52px">${n}</span>
-    <span class="bar"><i style="width:${p}%;background:${c}"></i></span>
-    <span style="width:88px;text-align:right">${p.toFixed(2)}%</span>
-    <span style="width:96px;text-align:right">${cur(fmt(l.reduce((s,x)=>s+(x.market_value??x.price),0)))}</span></div>`;
-  }).join('');
+  const pts=series();
+  barChart('c1',pts,'v','ax1','xl1',fmtW);
+  barChart('c2',pts.filter(p=>p.n>0),'v','ax2','xl2',fmtW);
+  barChart('c3',pts,'daily','ax3','xl3',fmtW);
 }
 
 function exportJSON(){
@@ -399,75 +547,90 @@ function exportJSON(){
   a.href=u;a.download='myassets.json';a.click();URL.revokeObjectURL(u);
 }
 
+/* ---------- sheet ---------- */
 function openSheet(id){
-  sheetMode='asset';editing=id||null;
+  editing=id||null;
   const a=id?S.assets.find(x=>x.id===id):null;
   $('#sheetT').textContent=a?'編輯資產':'新增資產';
   const cats=(S.categories||['未分類']).map(c=>`<option ${a&&a.category===c?'selected':''}>${c}</option>`).join('');
-  $('#sheetB').innerHTML=`
-  <label>名稱</label><input id="f_name" placeholder="請輸入資產名稱" value="${a?a.name:''}">
-  <label>價格</label><input id="f_price" type="number" inputmode="decimal" placeholder="請輸入物品價格" value="${a?a.price:''}">
-  <label>類型</label><div class="seg"><button class="on" onclick="segType('asset',this)">資產</button><button onclick="segType('wish',this)">心願</button></div>
-  <label>購買日期</label><input id="f_date" type="date" value="${a?a.purchase_date:new Date().toISOString().slice(0,10)}">
-  <label>類別</label><select id="f_cat">${cats}</select>
-  <label>標籤（逗號分隔）</label><input id="f_tags" placeholder="例如：工作, AI" value="${a?(a.tags||[]).join(', '):''}">
-  <label>圖標（emoji）</label><input id="f_icon" maxlength="4" value="${a?(a.icon||''):'📦'}">
-  <label>成本計算規則</label><div class="seg" id="seg_cost">
-    <button class="${!a||a.cost_rule!=='per_use'&&a.cost_rule!=='custom'?'on':''}" onclick="segCost('per_day',this)">按天</button>
-    <button class="${a&&a.cost_rule==='per_use'?'on':''}" onclick="segCost('per_use',this)">按次</button>
-    <button class="${a&&a.cost_rule==='custom'?'on':''}" onclick="segCost('custom',this)">自定義</button></div>
-  <label>目標日均</label><div class="seg" id="seg_td">
-    <button class="${!a||a.target_daily_mode==='none'?'on':''}" onclick="segTD('none',this)">不設定</button>
-    <button class="${a&&a.target_daily_mode==='by_price'?'on':''}" onclick="segTD('by_price',this)">按價格</button>
-    <button class="${a&&a.target_daily_mode==='by_date'?'on':''}" onclick="segTD('by_date',this)">按日期</button>
-    <button class="${a&&a.target_daily_mode==='custom'?'on':''}" onclick="segTD('custom',this)">自定義</button></div>
-  <div id="tdExtra"></div>
-  <div style="margin-top:16px;border-top:1px solid var(--line);padding-top:6px">
-    <div class="setrow"><div class="l">📌 置頂</div><div class="sw ${a&&a.pinned?'on':''}" id="sw_pin" onclick="tog('sw_pin')"></div></div>
-    <div class="setrow"><div class="l">❌ 不計入總資產</div><div class="sw ${a&&a.include_in_total===false?'on':''}" id="sw_total" onclick="tog('sw_total')"></div></div>
-    <div class="setrow"><div class="l">📊 不計入日均</div><div class="sw ${a&&a.include_in_daily===false?'on':''}" id="sw_daily" onclick="tog('sw_daily')"></div></div>
-    <div class="setrow"><div class="l">🏠 已退役</div><div class="sw ${a&&a.retired?'on':''}" id="sw_ret" onclick="tog('sw_ret')"></div></div>
-    <div class="setrow"><div class="l">⬆️ 已賣出</div><div class="sw ${a&&a.sold?'on':''}" id="sw_sold" onclick="tog('sw_sold')"></div></div>
-  </div>
-  <label>備註</label><textarea id="f_notes" rows="2" placeholder="輸入備註">${a?(a.notes||''):''}</textarea>
-  <div style="display:flex;gap:10px;margin-top:18px">
-    ${a?'<button class="save" style="background:#f0a04b;flex:1" onclick="delAsset()">刪除</button>':''}
-    <button class="save" style="flex:2" onclick="saveAsset()">儲存</button>
-  </div>`;
+  const dt=a&&a.purchase_date?a.purchase_date:new Date().toISOString().slice(0,10);
+  const dparts=dt.split('-');
   const mode=a?(a.target_daily_mode||'none'):'none';
+  $('#sheetB').innerHTML=`
+  <div class="gcard" style="display:flex;align-items:center;gap:12px;padding:12px 14px">
+    <span style="font-size:24px">${a?(a.icon||'📦'):'📦'}</span>
+    <span style="flex:1;font-size:14.5px">更換圖標</span>
+    <span style="color:var(--muted2)">⇌</span>
+  </div>
+  <div class="sgroup" style="margin-bottom:10px">
+    <div class="frow"><span class="fi">🖼</span><span class="fl">名稱</span><span class="fv" style="flex:1"><input id="f_name" placeholder="請輸入資產名稱" value="${a?a.name:''}"></span></div>
+    <div class="frow"><span class="fi">🪙</span><span class="fl">價格</span><span class="fv" style="flex:1"><input id="f_price" type="number" inputmode="decimal" placeholder="請輸入物品價格" value="${a?a.price:''}"></span></div>
+    <div class="frow"><span class="fi">🟰</span><span class="fl">類型</span>
+      <span class="pill"><button class="on" onclick="segPick(this)">資產</button><button onclick="segPick(this)">心願</button></span></div>
+  </div>
+  <div class="sgroup" style="margin-bottom:10px">
+    <div class="frow"><span class="fi">📅</span><span class="fl">購買日期</span><span class="fv"><input id="f_date" type="date" value="${dt}"></span></div>
+    <div class="frow"><span class="fi">🧩</span><span class="fl">類別</span><span class="fv"><select id="f_cat" style="border:0;text-align:right;font-size:15px;background:none">${cats}</select><span style="color:var(--muted2)">›</span></span></div>
+    <div class="frow"><span class="fi">🏷</span><span class="fl">標籤</span><span class="fv" style="flex:1"><input id="f_tags" placeholder="" value="${a?(a.tags||[]).join(', '):''}"></span></div>
+  </div>
+  <div class="sgroup" style="margin-bottom:10px">
+    <div class="frow" style="align-items:flex-start;flex-direction:column;gap:8px">
+      <div style="display:flex;width:100%;align-items:center;gap:12px"><span class="fi">🧮</span><span class="fl">成本計算規則</span></div>
+      <div class="pill" style="width:100%"><button class="${mode!=='per_use'&&mode!=='custom'?'on':''}" onclick="segPick(this)">按天</button><button class="${mode==='per_use'?'on':''}" onclick="segPick(this)">按次</button><button class="${mode==='custom'?'on':''}" onclick="segPick(this)">自定義</button></div>
+    </div>
+    <div class="frow" style="align-items:flex-start;flex-direction:column;gap:8px">
+      <div style="display:flex;width:100%;align-items:center;gap:12px"><span class="fi">🎯</span><span class="fl">目標日均 •</span></div>
+      <div class="pill" style="width:100%"><button class="${mode==='none'?'on':''}" onclick="segTD('none',this)">不設定</button><button class="${mode==='by_price'?'on':''}" onclick="segTD('by_price',this)">按價格</button><button class="${mode==='by_date'?'on':''}" onclick="segTD('by_date',this)">按日期</button><button class="${mode==='custom'?'on':''}" onclick="segTD('custom',this)">自定義</button></div>
+      <div id="tdExtra" style="width:100%"></div>
+    </div>
+  </div>
+  <div class="sgroup" style="margin-bottom:10px">
+    <div class="frow"><span class="fi">📝</span><span class="fl">備註</span><span class="fv" style="flex:1"><textarea id="f_notes" rows="2" placeholder="輸入備註" style="border:0;padding:0">${a?(a.notes||''):''}</textarea></span></div>
+  </div>
+  <div class="sgroup" style="margin-bottom:10px">
+    <div class="setrow"><span class="l">📌 置頂</span><span class="sw ${a&&a.pinned?'on':''}" id="sw_pin" onclick="this.classList.toggle('on')"></span></div>
+    <div class="setrow"><span class="l">❌ 不計入總資產</span><span class="sw ${a&&a.include_in_total===false?'on':''}" id="sw_total" onclick="this.classList.toggle('on')"></span></div>
+    <div class="setrow"><span class="l">📊 不計入日均</span><span class="sw ${a&&a.include_in_daily===false?'on':''}" id="sw_daily" onclick="this.classList.toggle('on')"></span></div>
+    <div class="setrow"><span class="l">🏠 已退役</span><span class="sw ${a&&a.retired?'on':''}" id="sw_ret" onclick="this.classList.toggle('on')"></span></div>
+    <div class="setrow"><span class="l">⬆️ 已賣出</span><span class="sw ${a&&a.sold?'on':''}" id="sw_sold" onclick="this.classList.toggle('on')"></span></div>
+  </div>
+  ${a?'<button class="delbtn" onclick="delAsset()">刪除</button>':''}
+  <button class="save" onclick="saveAsset()">儲存</button>`;
   tdExtra(mode,a);
   $('#sheet').classList.add('open');
 }
 function tdExtra(mode,a){
   let h='';
-  if(mode==='by_date')h+=`<label>目標結束日期</label><input id="f_end" type="date" value="${a&&a.target_end_date?a.target_end_date:''}">`;
-  if(mode==='custom')h+=`<label>目標日均</label><input id="f_td" type="number" inputmode="decimal" placeholder="請輸入目標日均成本" value="${a&&a.target_daily?a.target_daily:''}">`;
-  $('#tdExtra').innerHTML=h;
+  if(mode==='by_date')h+=`<input id="f_end" type="date" value="${a&&a.target_end_date?a.target_end_date:''}">`;
+  if(mode==='custom')h+=`<input id="f_td" type="number" inputmode="decimal" placeholder="請輸入目標日均成本" value="${a&&a.target_daily?a.target_daily:''}">`;
+  const box=document.getElementById('tdExtra');
+  if(box)box.innerHTML=h;
 }
-function tog(id){const e=document.getElementById(id);if(e)e.classList.toggle('on');}
-function segCost(v,b){[...b.parentElement.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');}
-function segTD(v,b){[...b.parentElement.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');tdExtra(v,editing?S.assets.find(x=>x.id===editing):null);}
-function segType(v,b){[...b.parentElement.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');}
+function segPick(b){[...b.parentElement.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');}
+function segTD(v,b){
+  [...b.parentElement.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  tdExtra(v,editing?S.assets.find(x=>x.id===editing):null);
+}
 function closeSheet(){$('#sheet').classList.remove('open');}
-function saveAsset(){
-  const g=id=>document.getElementById(id).value.trim();
-  const o={name:g('f_name')||'未命名',price:Number(g('f_price'))||0,
-    purchase_date:g('f_date')||new Date().toISOString().slice(0,10),
-    category:g('f_cat')||'未分類',tags:g('f_tags')?g('f_tags').split(/[,，]/).map(s=>s.trim()).filter(Boolean):[],
-    icon:g('f_icon')||'📦',notes:g('f_notes')||'',
-    cost_rule:(document.querySelector('#seg_cost .on')||{}).textContent==='按次'?'per_use':((document.querySelector('#seg_cost .on')||{}).textContent==='自定義'?'custom':'per_day'),
-    target_daily_mode:['none','by_price','by_date','custom'][[...document.querySelectorAll('#seg_td button')].findIndex(b=>b.classList.contains('on'))]||'none',
-    target_end_date:g('f_end')||null,target_daily:Number(g('f_td'))||null,
-    include_in_total:on('sw_total',a),include_in_daily:on('sw_daily',a),pinned:on('sw_pin',a),
-    retired:on('sw_ret',a),sold:on('sw_sold',a),type:'asset'};
-  if(editing){const i=S.assets.findIndex(x=>x.id===editing);S.assets[i]={...S.assets[i],...o};}
-  else S.assets.push({id:'a'+Date.now(),...o});
-  closeSheet();render();
-}
-function on(id,a){
+function on(id){
   const e=document.getElementById(id);
   if(!e) return !(id==='sw_total'||id==='sw_daily');
   return e.classList.contains('on');
+}
+function saveAsset(){
+  const g=id=>{const e=document.getElementById(id);return e?e.value.trim():'';};
+  const o={name:g('f_name')||'未命名',price:Number(g('f_price'))||0,
+    purchase_date:g('f_date')||new Date().toISOString().slice(0,10),
+    category:g('f_cat')||'未分類',tags:g('f_tags')?g('f_tags').split(/[,，]/).map(s=>s.trim()).filter(Boolean):[],
+    icon:(editing?(S.assets.find(x=>x.id===editing)||{}).icon:null)||'📦',notes:g('f_notes')||'',
+    cost_rule:(()=>{const t=(document.querySelector('.pill button.on')||{}).textContent||'按天';return t==='按次'?'per_use':t==='自定義'?'custom':'per_day';})(),
+    target_daily_mode:(()=>{const bs=[...document.querySelectorAll('.pill button')].filter(b=>['不設定','按價格','按日期','自定義'].includes(b.textContent.trim()));const on=bs.find(b=>b.classList.contains('on'));if(!on)return 'none';return {'不設定':'none','按價格':'by_price','按日期':'by_date','自定義':'custom'}[on.textContent.trim()];})(),
+    target_end_date:g('f_end')||null,target_daily:Number(g('f_td'))||null,
+    include_in_total:on('sw_total'),include_in_daily:on('sw_daily'),pinned:on('sw_pin'),
+    retired:on('sw_ret'),sold:on('sw_sold'),type:'asset',market_value:Number(g('f_price'))||0};
+  if(editing){const i=S.assets.findIndex(x=>x.id===editing);S.assets[i]={...S.assets[i],...o};}
+  else S.assets.push({id:'a'+Date.now(),...o});
+  closeSheet();render();
 }
 function delAsset(){
   if(!editing)return;
