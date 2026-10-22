@@ -422,6 +422,13 @@ function openSheet(id){
     <button class="${a&&a.target_daily_mode==='by_date'?'on':''}" onclick="segTD('by_date',this)">按日期</button>
     <button class="${a&&a.target_daily_mode==='custom'?'on':''}" onclick="segTD('custom',this)">自定義</button></div>
   <div id="tdExtra"></div>
+  <div style="margin-top:16px;border-top:1px solid var(--line);padding-top:6px">
+    <div class="setrow"><div class="l">📌 置頂</div><div class="sw ${a&&a.pinned?'on':''}" id="sw_pin" onclick="tog('sw_pin')"></div></div>
+    <div class="setrow"><div class="l">❌ 不計入總資產</div><div class="sw ${a&&a.include_in_total===false?'on':''}" id="sw_total" onclick="tog('sw_total')"></div></div>
+    <div class="setrow"><div class="l">📊 不計入日均</div><div class="sw ${a&&a.include_in_daily===false?'on':''}" id="sw_daily" onclick="tog('sw_daily')"></div></div>
+    <div class="setrow"><div class="l">🏠 已退役</div><div class="sw ${a&&a.retired?'on':''}" id="sw_ret" onclick="tog('sw_ret')"></div></div>
+    <div class="setrow"><div class="l">⬆️ 已賣出</div><div class="sw ${a&&a.sold?'on':''}" id="sw_sold" onclick="tog('sw_sold')"></div></div>
+  </div>
   <label>備註</label><textarea id="f_notes" rows="2" placeholder="輸入備註">${a?(a.notes||''):''}</textarea>
   <div style="display:flex;gap:10px;margin-top:18px">
     ${a?'<button class="save" style="background:#f0a04b;flex:1" onclick="delAsset()">刪除</button>':''}
@@ -437,6 +444,7 @@ function tdExtra(mode,a){
   if(mode==='custom')h+=`<label>目標日均</label><input id="f_td" type="number" inputmode="decimal" placeholder="請輸入目標日均成本" value="${a&&a.target_daily?a.target_daily:''}">`;
   $('#tdExtra').innerHTML=h;
 }
+function tog(id){const e=document.getElementById(id);if(e)e.classList.toggle('on');}
 function segCost(v,b){[...b.parentElement.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');}
 function segTD(v,b){[...b.parentElement.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');tdExtra(v,editing?S.assets.find(x=>x.id===editing):null);}
 function segType(v,b){[...b.parentElement.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');}
@@ -450,10 +458,16 @@ function saveAsset(){
     cost_rule:(document.querySelector('#seg_cost .on')||{}).textContent==='按次'?'per_use':((document.querySelector('#seg_cost .on')||{}).textContent==='自定義'?'custom':'per_day'),
     target_daily_mode:['none','by_price','by_date','custom'][[...document.querySelectorAll('#seg_td button')].findIndex(b=>b.classList.contains('on'))]||'none',
     target_end_date:g('f_end')||null,target_daily:Number(g('f_td'))||null,
-    include_in_total:true,include_in_daily:true,pinned:false,retired:false,sold:false,type:'asset'};
+    include_in_total:on('sw_total',a),include_in_daily:on('sw_daily',a),pinned:on('sw_pin',a),
+    retired:on('sw_ret',a),sold:on('sw_sold',a),type:'asset'};
   if(editing){const i=S.assets.findIndex(x=>x.id===editing);S.assets[i]={...S.assets[i],...o};}
   else S.assets.push({id:'a'+Date.now(),...o});
   closeSheet();render();
+}
+function on(id,a){
+  const e=document.getElementById(id);
+  if(!e) return !(id==='sw_total'||id==='sw_daily');
+  return e.classList.contains('on');
 }
 function delAsset(){
   if(!editing)return;
