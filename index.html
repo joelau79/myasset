@@ -235,8 +235,8 @@ const $=s=>document.querySelector(s);
 const fmt=n=>{const d=S.meta.decimals??2;return Number(n||0).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});};
 const cur=v=>S.meta.currency_symbol+v;
 const today=()=>new Date();
-const days=(iso)=>Math.max(0,Math.round((today()-new Date(iso+'T00:00:00'))/86400000));
-const dur=a=>days(a.purchase_date);
+const days=(iso)=>{if(!iso)return 0;const p=String(iso).split('-').map(Number);const u=Date.UTC(p[0],(p[1]||1)-1,p[2]||1);const t=new Date();const now=Date.UTC(t.getFullYear(),t.getMonth(),t.getDate());return Math.max(0,Math.round((now-u)/86400000));};
+const dur=a=>days(a&&a.purchase_date);
 
 function totals(list){
   const t=list.reduce((s,a)=>s+(a.include_in_total!==false && !a.retired && !a.sold ? (a.market_value??a.price):0),0);
@@ -290,7 +290,7 @@ function homeHTML(){
 }
 
 function itemHTML(a){
-  const n=dur(a.purchase_date);
+  const n=dur(a);
   const t=totals([a]);
   let bar='',extra='';
   if(a.target_daily_mode==='by_date'&&a.target_end_date){
