@@ -88,8 +88,9 @@ input,select,textarea{width:100%;padding:11px 13px;border:1px solid var(--line);
   </div>
 </div>
 
+<script src="assets.js"></script>
 <script>
-const DATA = {
+const DATA = (typeof window.MYASSET !== "undefined") ? window.MYASSET : {
 "meta": {
 "owner": "Joe Lau",
 "currency": "MOP",
