@@ -20,6 +20,13 @@ main{padding:2px 16px}
 h2{font-size:13px;color:var(--muted);font-weight:500;margin:20px 4px 8px;letter-spacing:.2px}
 h2 .cnt{color:var(--muted2);font-weight:400}
 .gcard{background:var(--card);border-radius:14px;padding:16px 16px 14px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.hero{background:linear-gradient(135deg,#a2ff33,#c4ff5e);border-radius:16px;padding:16px 16px 14px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.hero .hl{font-size:12.5px;color:rgba(0,0,0,.62)}
+.hero .hv{font-size:29px;font-weight:700;letter-spacing:-.7px;margin:1px 0 12px}
+.hero .hgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.hero .hc .hcl{font-size:11.5px;color:rgba(0,0,0,.55);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero .hc .hcv{font-size:14.5px;font-weight:700;letter-spacing:-.3px;margin-top:1px}
+.hero .hc .hcv.sm{font-size:13px}
 .gtop{display:flex;align-items:flex-start;gap:12px}
 .gbig{flex:1;min-width:0}
 .gbig .lb{font-size:12.5px;color:var(--muted)}
@@ -48,6 +55,12 @@ h2 .cnt{color:var(--muted2);font-weight:400}
 .acost{font-size:13px;color:var(--muted)}
 .aright{margin-left:auto;text-align:right;flex:0 0 auto;padding-top:2px}
 .aright .d{font-size:14.5px;font-weight:600;letter-spacing:-.2px}
+.aright .u{font-size:11.5px;color:var(--muted);font-weight:400}
+.atags{margin-top:6px;display:flex;flex-wrap:wrap;gap:5px}
+.atags span{font-size:11.5px;color:var(--muted);background:#f2f2f7;border-radius:5px;padding:2px 6px}
+.aname .pin{color:var(--orange);margin-left:3px;font-size:13px}
+.astat2{font-size:13px;color:var(--muted);margin-top:1px}
+.astat2 .sep{margin:0 5px;color:var(--muted2)}
 .pbar{height:5px;background:#ececf0;border-radius:3px;margin-top:8px;position:relative}
 .pbar i{display:block;height:100%;border-radius:3px;background:var(--green)}
 .pbar .mark{position:absolute;top:-3px;width:2px;height:11px;background:#111;border-radius:1px}
@@ -60,6 +73,7 @@ h2 .cnt{color:var(--muted2);font-weight:400}
 .setrow:last-child{border-bottom:0}
 .setrow .si{width:27px;height:27px;border-radius:7px;display:grid;place-items:center;font-size:13px;color:#fff;flex:0 0 auto}
 .setrow .l{flex:1;font-size:14.5px;min-width:0}
+.setrow .pro{flex:0 0 auto;margin-right:2px}
 .setrow .r{font-size:14px;color:var(--muted);white-space:nowrap}
 .setrow .r.chev{color:var(--muted2);font-size:15px;margin-left:2px}
 .sgroup{background:#fff;border-radius:14px;overflow:hidden;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
@@ -75,6 +89,11 @@ h2 .cnt{color:var(--muted2);font-weight:400}
 .banner .bt{font-size:16px;font-weight:700;position:relative}
 .banner .bs{font-size:12.5px;margin-top:3px;position:relative;opacity:.85}
 .banner .bb{margin-top:10px;display:inline-block;background:#111;color:#fff;font-size:13px;font-weight:600;padding:7px 15px;border-radius:999px;position:relative;cursor:pointer}
+.banner .banart{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:62px;height:62px;border-radius:50%;background:#ffd60a;display:grid;place-items:center;font-size:32px;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.bantxt{max-width:calc(100% - 78px)}
+.pill button.on.soft{background:#e3e3e8;color:var(--ink);box-shadow:none}
+.pro{font-size:10.5px;color:#0a84ff;margin-left:4px}
+.imgph{width:52px;height:52px;border-radius:10px;border:1px dashed var(--muted2);display:grid;place-items:center;font-size:20px;color:var(--muted2);flex:0 0 auto}
 .chartwrap{position:relative;padding:6px 2px 0}
 canvas{width:100%;display:block}
 .axis{position:absolute;right:0;top:4px;bottom:20px;display:flex;flex-direction:column;justify-content:space-between;font-size:9.5px;color:var(--muted2);pointer-events:none}
@@ -84,7 +103,7 @@ nav button{flex:1;background:none;border:0;display:flex;flex-direction:column;al
 nav button .ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:16px;color:#111}
 nav button.on .ic{background:#dff5c8}
 nav button.on{font-weight:600}
-.fab{position:fixed;right:16px;bottom:calc(78px + var(--safe-b));width:52px;height:52px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.22);display:grid;place-items:center;font-size:26px;color:#111;z-index:25;cursor:pointer;border:0;font-weight:300}
+.fab{position:fixed;right:16px;bottom:calc(78px + var(--safe-b));width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#a2ff33,#8ee02a);box-shadow:0 4px 14px rgba(0,0,0,.22);display:grid;place-items:center;font-size:26px;color:#fff;z-index:25;cursor:pointer;border:0;font-weight:300}
 .sheet{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:40;display:none;align-items:flex-end}
 .sheet.open{display:flex}
 .sheet .panel{background:var(--bg);width:100%;border-radius:14px 14px 0 0;max-height:94vh;overflow:auto;padding-bottom:calc(24px + var(--safe-b))}
@@ -317,24 +336,18 @@ function homeHTML(){
   const bar=(n,color)=>{const p=all.length?(n/all.length*100):0;return `<div class="statrow"><span class="nm">${color==='var(--green)'?'使用中':color==='var(--orange)'?'已退役':'已賣出'}</span><span class="bar"><i style="width:${p}%;background:${color}"></i></span><span class="cnt">${n}</span></div>`;};
   return `
   <h2>資產總覽 <span class="cnt">${all.length}/${all.length}</span></h2>
-  <div class="gcard">
-    <div class="gtop">
-      <div class="gbig">
-        <div class="lb">總資產</div>
-        <div class="v">${cur(fmt(t.total))}</div>
-        <div class="lb2">日均成本</div>
-        <div class="v2">${cur(fmt(t.daily))}</div>
-      </div>
-      <div class="gicon">💰</div>
-    </div>
-    <div style="margin-top:12px">
-      ${bar(use.length,'var(--green)')}
-      ${bar(ret.length,'var(--orange)')}
-      ${bar(sold.length,'var(--grey)')}
+  <div class="hero">
+    <div class="hl">總資產</div>
+    <div class="hv">${cur(fmt(t.total))}</div>
+    <div class="hgrid">
+      <div class="hc"><div class="hcl">日均成本</div><div class="hcv sm">${cur(fmt(t.daily))}</div></div>
+      <div class="hc"><div class="hcl">使用中</div><div class="hcv">${use.length}</div></div>
+      <div class="hc"><div class="hcl">已退役</div><div class="hcv">${ret.length}</div></div>
+      <div class="hc"><div class="hcl">已賣出</div><div class="hcv">${sold.length}</div></div>
     </div>
   </div>
   <div class="tabs">${fl.map(([l,k])=>`<div class="tab ${filter===k?'on':''}" onclick="filter='${k}';render()">${l}</div>`).join('')}
-    <div class="rowtools"><div class="ico" onclick="sortBy('price')">1↓</div><div class="ico" onclick="toggleFilterSheet()">⧩</div><div class="ico" onclick="toggleSelectMode()">☑</div></div>
+    <div class="rowtools"><div class="ico" onclick="sortBy('price')">↕</div><div class="ico" onclick="go('settings')">⚙</div></div>
   </div>
   ${query?`<div class="gcard" style="padding:10px 14px;display:flex;align-items:center;gap:8px"><span>🔍</span><span style="flex:1;font-size:14px">${query}</span><span style="color:var(--muted);cursor:pointer" onclick="query='';render()">✕</span></div>`:''}
   ${list.length?list.map(itemHTML).join(''):'<div class="empty"><div class="e">📦</div><div class="m">目前空空如也</div><div class="h">點擊 ＋ 新增資產</div></div>'}`;
@@ -360,15 +373,18 @@ function itemHTML(a){
   }
   const st=a.retired?'已退役':(a.sold?'已賣出':'使用中');
   const sc=a.retired?'var(--orange)':(a.sold?'var(--grey)':'var(--green)');
+  const tags=(a.tags||[]).map(t=>`<span>#${t}</span>`).join('');
+  const du=S.meta.duration_unit||'天';
   return `<div class="acard" onclick="openSheet('${a.id}')">
     <div class="aico">${a.icon||'📦'}</div>
     <div class="abody">
       <div class="astat"><span class="dot" style="background:${sc}"></span>${st}</div>
-      <div class="aname">${a.name}</div>
-      <div class="acost">${cur(fmt(a.price))} | ${n} ${S.meta.duration_unit||'天'}</div>
+      <div class="aname">${a.name}${a.pinned?'<span class="pin">✦</span>':''}</div>
+      <div class="astat2">${cur(fmt(a.price))}<span class="sep">•</span>${n} ${du}</div>
+      ${tags?`<div class="atags">${tags}</div>`:''}
       ${bar}${left}
     </div>
-    <div class="aright"><div class="d">${cur(fmt(dv))}/${S.meta.duration_unit||'天'}</div></div>
+    <div class="aright"><div class="d">${cur(fmt(dv))}<span class="u">/${du}</span></div></div>
   </div>`;
 }
 
@@ -383,11 +399,11 @@ function wishesHTML(){
         <div class="v">${cur(fmt(t))}</div>
         <div class="lb" style="margin-top:6px">心願數量 : ${w.length}</div>
       </div>
-      <div class="gicon">🫙</div>
+      <div class="gicon" style="background:#eaf9e4">🫙</div>
     </div>
   </div>
   ${w.length?w.map(x=>`<div class="acard"><div class="aico">${x.icon||'🫙'}</div><div class="abody"><div class="aname">${x.name}</div><div class="acost">${cur(fmt(x.price))}</div></div><div class="aright"><div class="d">${cur(fmt(x.price))}</div></div></div>`).join('')
-  :'<div class="empty"><div class="e">🫙</div><div class="m">目前空空如也</div><div class="h">點擊 ＋ 新增資產</div></div>'}`;
+  :'<div class="empty"><div class="e">🫙</div><div class="m">目前空空如也</div><div class="h">點擊 ➕ 新增資產</div></div>'}`;
 }
 
 function trendsHTML(){
@@ -398,9 +414,28 @@ function trendsHTML(){
   const seg=statMode==='amount'
     ? [['使用中',use,all],['已退役',ret,all],['已賣出',sold,all]]
     : [['使用中',use,all],['已退役',ret,all],['已賣出',sold,all]];
+  const nAll=all.length;
   return `
-  <h2 style="display:flex;align-items:center;margin-top:14px">趨勢 洞悉 <span class="ico" style="margin-left:auto">↗</span></h2>
+  <h2 style="display:flex;align-items:center;margin-top:14px;font-size:22px;color:var(--ink);font-weight:700;letter-spacing:-.3px">趨勢 洞悉 <span class="ico" style="margin-left:auto;background:#e3e3e8" onclick="render()">⟳</span></h2>
   <div class="tabs">${rg.map(([l,k])=>`<div class="tab ${range===k?'on':''}" onclick="range='${k}';render()">${l}</div>`).join('')}</div>
+  <h2>資產總值</h2>
+  <div class="gcard">
+    <div class="gtop">
+      <div class="gbig">
+        <div class="lb">總價值</div>
+        <div class="v">${cur(fmt(t.total))}</div>
+      </div>
+      <div class="gbig" style="flex:0 0 auto;text-align:right">
+        <div class="lb">數量</div>
+        <div class="v">${nAll}</div>
+      </div>
+    </div>
+    <div class="chartwrap" style="margin-top:12px">
+      <canvas id="c0" height="170"></canvas>
+      <div class="axis" id="ax0"></div>
+      <div class="xaxis" id="xl0"></div>
+    </div>
+  </div>
   <h2>資產狀態</h2>
   <div class="gcard">
     <div style="display:flex;justify-content:flex-end;margin-bottom:6px">
@@ -440,9 +475,12 @@ function settingsHTML(){
     <button class="ico" style="margin-left:auto;width:auto;height:auto;padding:7px 12px;border-radius:999px;background:#e3e3e8;font-size:13px;gap:5px;display:flex;align-items:center">⟳ 恢復購買</button>
   </div>
   <div class="banner">
-    <div class="bt">加入 有數 PRO</div>
-    <div class="bs">解鎖全部權限，讓資產心中有數</div>
-    <span class="bb">了解權益</span>
+    <div class="bantxt">
+      <div class="bt">加入 有數 PRO</div>
+      <div class="bs">解鎖全部權限，讓資產心中有數</div>
+      <span class="bb">了解權益</span>
+    </div>
+    <div class="banart">👑</div>
   </div>
   <h2>數據與安全</h2>
   <div class="sgroup">
@@ -463,11 +501,11 @@ function settingsHTML(){
   </div>
   <h2>顯示與外觀</h2>
   <div class="sgroup">
-    <div class="setrow"><span class="si" style="background:#0a84ff">👕</span><span class="l">主題模式</span>
-      <span class="pill"><button>🌙</button><button class="on" style="background:#ffd60a">☀️</button><button>◐</button></span></div>
+    <div class="setrow"><span class="si" style="background:#bf5af2">👕</span><span class="l">主題模式</span>
+      <span class="pill"><button>◐</button><button class="on" style="background:#ffd60a">☀️</button><button>🌙</button></span></div>
     ${R({t:'▦',bg:'#34c759'},'應用圖標','',true)}
     <div class="setrow"><span class="si" style="background:#34c759">📄</span><span class="l">首頁風格</span>
-      <span class="pill"><button class="on">預設</button><button>經典</button></span></div>
+      <span class="pill"><button class="on soft">預設</button><button class="soft">經典</button></span></div>
     ${R({t:'◎',bg:'#0a84ff'},'視圖模式','',true)}
   </div>
   <h2>通用設置</h2>
@@ -526,7 +564,10 @@ function barChart(id,pts,key,axisId,xlId,fmtY){
   const ax=document.getElementById(axisId);
   if(ax){const steps=[top,top*0.75,top*0.5,top*0.25,0];ax.innerHTML=steps.map(v=>`<span>${fmtY(v)}</span>`).join('');}
   const xl=document.getElementById(xlId);
-  if(xl)xl.innerHTML=pts.map(p=>`<span>${p.d.slice(5).replace('-','.')==='10.22'?'今天':p.d.slice(5).replace('-','.')}</span>`).join('');
+  if(xl){
+    const today=new Date().toISOString().slice(0,10);
+    xl.innerHTML=pts.map(p=>`<span>${p.d===today?'今天':p.d.slice(5).replace('-','.')}</span>`).join('');
+  }
 }
 function fmtW(v){
   if(v>=100000000)return (v/100000000).toFixed(0)+'w';
@@ -534,8 +575,50 @@ function fmtW(v){
   if(v>=1000)return (v/1000).toFixed(0)+'k';
   return String(Math.round(v));
 }
+function lineChart(id,pts,key,axisId,xlId,fmtY){
+  const c=document.getElementById(id);if(!c)return;
+  const wrap=c.parentElement;
+  const w=c.width=Math.max(200,wrap.clientWidth-34), h=c.height;
+  const vals=pts.map(p=>p[key]);
+  const mx=Math.max(...vals,1);
+  const nice=n=>{const s=n>=10000?10000:n>=1000?1000:n>=100?100:10;return Math.ceil(n/s)*s;};
+  const top=nice(mx);
+  const g=c.getContext('2d');
+  g.clearRect(0,0,w,h);
+  const padB=18,padT=6, ch=h-padB-padT;
+  // 虛線格
+  g.strokeStyle='#ececf0';g.lineWidth=1;g.setLineDash([3,3]);
+  for(let i=0;i<=4;i++){const y=padT+ch*i/4;g.beginPath();g.moveTo(0,y+.5);g.lineTo(w,y+.5);g.stroke();}
+  g.setLineDash([]);
+  const X=i=>4+i*((w-8)/Math.max(1,pts.length-1));
+  const Y=v=>padT+ch-(v/top)*ch;
+  // 面積
+  g.beginPath();g.moveTo(X(0),Y(vals[0]||0));
+  pts.forEach((p,i)=>g.lineTo(X(i),Y(p[key])));
+  g.lineTo(X(pts.length-1),h-padB);g.lineTo(X(0),h-padB);g.closePath();
+  const grd=g.createLinearGradient(0,padT,0,h-padB);
+  grd.addColorStop(0,'rgba(52,199,89,.28)');grd.addColorStop(1,'rgba(52,199,89,0)');
+  g.fillStyle=grd;g.fill();
+  // 線
+  g.beginPath();pts.forEach((p,i)=>{const x=X(i),y=Y(p[key]);i?g.lineTo(x,y):g.moveTo(x,y);});
+  g.strokeStyle='#34c759';g.lineWidth=2;g.stroke();
+  // 點
+  g.fillStyle='#34c759';
+  pts.forEach((p,i)=>{g.beginPath();g.arc(X(i),Y(p[key]),2.6,0,Math.PI*2);g.fill();});
+  // 底線
+  g.strokeStyle='#e5e5ea';g.lineWidth=1;
+  g.beginPath();g.moveTo(0,h-padB+.5);g.lineTo(w,h-padB+.5);g.stroke();
+  const ax=document.getElementById(axisId);
+  if(ax){const steps=[top,top*0.75,top*0.5,top*0.25,0];ax.innerHTML=steps.map(v=>`<span>${fmtY(v)}</span>`).join('');}
+  const xl=document.getElementById(xlId);
+  if(xl){
+    const today=new Date().toISOString().slice(0,10);
+    xl.innerHTML=pts.map(p=>`<span>${p.d===today?'今天':p.d.slice(5).replace('-','.')}</span>`).join('');
+  }
+}
 function drawCharts(){
   const pts=series();
+  lineChart('c0',pts,'v','ax0','xl0',fmtW);
   barChart('c1',pts,'v','ax1','xl1',fmtW);
   barChart('c2',pts.filter(p=>p.n>0),'v','ax2','xl2',fmtW);
   barChart('c3',pts,'daily','ax3','xl3',fmtW);
@@ -559,8 +642,9 @@ function openSheet(id){
   $('#sheetB').innerHTML=`
   <div class="gcard" style="display:flex;align-items:center;gap:12px;padding:12px 14px">
     <span style="font-size:24px">${a?(a.icon||'📦'):'📦'}</span>
-    <span style="flex:1;font-size:14.5px">更換圖標</span>
+    <span style="flex:1;font-size:14.5px">更換圖示</span>
     <span style="color:var(--muted2)">⇌</span>
+    <div class="imgph" style="margin-left:4px">🖼</div>
   </div>
   <div class="sgroup" style="margin-bottom:10px">
     <div class="frow"><span class="fi">🖼</span><span class="fl">名稱</span><span class="fv" style="flex:1"><input id="f_name" placeholder="請輸入資產名稱" value="${a?a.name:''}"></span></div>
@@ -575,11 +659,13 @@ function openSheet(id){
   </div>
   <div class="sgroup" style="margin-bottom:10px">
     <div class="frow" style="align-items:flex-start;flex-direction:column;gap:8px">
-      <div style="display:flex;width:100%;align-items:center;gap:12px"><span class="fi">🧮</span><span class="fl">成本計算規則</span></div>
+      <div style="display:flex;width:100%;align-items:center;gap:12px"><span class="fi">🧮</span><span class="fl">收益記錄</span><span class="pro">PRO</span></div>
       <div class="pill" style="width:100%"><button class="${mode!=='per_use'&&mode!=='custom'?'on':''}" onclick="segPick(this)">按天</button><button class="${mode==='per_use'?'on':''}" onclick="segPick(this)">按次</button><button class="${mode==='custom'?'on':''}" onclick="segPick(this)">自定義</button></div>
     </div>
+    <div class="frow"><span class="fi">📈</span><span class="fl">市價</span><span class="fv" style="flex:1"><input id="f_market" type="number" inputmode="decimal" placeholder="請輸入市價" value="${a&&a.market_value?a.market_value:''}"></span></div>
+    <div class="frow"><span class="fi">➕</span><span class="fl">附加項</span><span class="pro">PRO</span><span class="fv">＋</span></div>
     <div class="frow" style="align-items:flex-start;flex-direction:column;gap:8px">
-      <div style="display:flex;width:100%;align-items:center;gap:12px"><span class="fi">🎯</span><span class="fl">目標日均 •</span></div>
+      <div style="display:flex;width:100%;align-items:center;gap:12px"><span class="fi">🎯</span><span class="fl">目標日均</span><span class="pro">PRO</span></div>
       <div class="pill" style="width:100%"><button class="${mode==='none'?'on':''}" onclick="segTD('none',this)">不設定</button><button class="${mode==='by_price'?'on':''}" onclick="segTD('by_price',this)">按價格</button><button class="${mode==='by_date'?'on':''}" onclick="segTD('by_date',this)">按日期</button><button class="${mode==='custom'?'on':''}" onclick="segTD('custom',this)">自定義</button></div>
       <div id="tdExtra" style="width:100%"></div>
     </div>
@@ -588,7 +674,7 @@ function openSheet(id){
     <div class="frow"><span class="fi">📝</span><span class="fl">備註</span><span class="fv" style="flex:1"><textarea id="f_notes" rows="2" placeholder="輸入備註" style="border:0;padding:0">${a?(a.notes||''):''}</textarea></span></div>
   </div>
   <div class="sgroup" style="margin-bottom:10px">
-    <div class="setrow"><span class="l">📌 置頂</span><span class="sw ${a&&a.pinned?'on':''}" id="sw_pin" onclick="this.classList.toggle('on')"></span></div>
+    <div class="setrow"><span class="l">📌 置頂</span><span class="pro">PRO</span><span class="sw ${a&&a.pinned?'on':''}" id="sw_pin" onclick="this.classList.toggle('on')"></span></div>
     <div class="setrow"><span class="l">❌ 不計入總資產</span><span class="sw ${a&&a.include_in_total===false?'on':''}" id="sw_total" onclick="this.classList.toggle('on')"></span></div>
     <div class="setrow"><span class="l">📊 不計入日均</span><span class="sw ${a&&a.include_in_daily===false?'on':''}" id="sw_daily" onclick="this.classList.toggle('on')"></span></div>
     <div class="setrow"><span class="l">🏠 已退役</span><span class="sw ${a&&a.retired?'on':''}" id="sw_ret" onclick="this.classList.toggle('on')"></span></div>
@@ -600,11 +686,12 @@ function openSheet(id){
   $('#sheet').classList.add('open');
 }
 function tdExtra(mode,a){
+  const label='<div style="font-size:12.5px;color:var(--muted);margin:2px 0 5px">目標日均</div>';
   let h='';
-  if(mode==='by_date')h+=`<input id="f_end" type="date" value="${a&&a.target_end_date?a.target_end_date:''}">`;
-  if(mode==='custom')h+=`<input id="f_td" type="number" inputmode="decimal" placeholder="請輸入目標日均成本" value="${a&&a.target_daily?a.target_daily:''}">`;
+  if(mode==='by_date')h+=`<input id="f_end" type="date" value="${a&&a.target_end_date?a.target_end_date:''}" style="margin-bottom:8px">`;
+  h+=`<input id="f_td" type="number" inputmode="decimal" placeholder="請輸入目標日均成本" value="${a&&a.target_daily?a.target_daily:''}" style="margin-bottom:8px">`;
   const box=document.getElementById('tdExtra');
-  if(box)box.innerHTML=h;
+  if(box)box.innerHTML=label+h;
 }
 function segPick(b){[...b.parentElement.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');}
 function segTD(v,b){
@@ -627,7 +714,7 @@ function saveAsset(){
     target_daily_mode:(()=>{const bs=[...document.querySelectorAll('.pill button')].filter(b=>['不設定','按價格','按日期','自定義'].includes(b.textContent.trim()));const on=bs.find(b=>b.classList.contains('on'));if(!on)return 'none';return {'不設定':'none','按價格':'by_price','按日期':'by_date','自定義':'custom'}[on.textContent.trim()];})(),
     target_end_date:g('f_end')||null,target_daily:Number(g('f_td'))||null,
     include_in_total:on('sw_total'),include_in_daily:on('sw_daily'),pinned:on('sw_pin'),
-    retired:on('sw_ret'),sold:on('sw_sold'),type:'asset',market_value:Number(g('f_price'))||0};
+    retired:on('sw_ret'),sold:on('sw_sold'),type:'asset',market_value:Number(g('f_market'))||Number(g('f_price'))||0};
   if(editing){const i=S.assets.findIndex(x=>x.id===editing);S.assets[i]={...S.assets[i],...o};}
   else S.assets.push({id:'a'+Date.now(),...o});
   closeSheet();render();
